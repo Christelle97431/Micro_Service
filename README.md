@@ -1,5 +1,5 @@
 # Micro_Service
-Wiht Python3 and Flask, an API microservice to register and connect. A User microservice to return data from the API
+With Python3 and Flask, an API microservice to register and connect. A User microservice to return data from the API
 
 ## General Information
 With Flask and Python3, this application allows to create an API (CRUD User) on a server and to return the data on the client side, on another server.  
