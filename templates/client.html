@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>HOME</title>
+</head>
+
+
+<body class="p-10">
+
+<h1 class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Fichier des clients</span></h1>
+
+<!-- Afficher 1 client -->
+<form action="http://localhost:5000/user" method="POST">
+    <label for="id">Enter an ID to display an user :</label>
+    <input
+      class="form-control block px-3 py-1.5 text-base font-normal text-gray-700 bg-gray-100 bg-clip-paddingborder border-solid border-gray-300 rounded transition ease-in-outm-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+      "type="text" 
+      id="id" 
+      name="id">
+    <input 
+      class="flex text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" 
+      type="submit" 
+      value="Show user">
+</form>
+
+<br><br>
+
+<!-- Supprimer 1 client -->
+<form action="http://localhost:5000/delete" method="POST">
+    <label for="id">Enter an ID to delete an user :</label>
+    <input
+      class="form-control block px-3 py-1.5 text-base font-normal text-gray-700 bg-gray-100 bg-clip-paddingborder border-solid border-gray-300 rounded transition ease-in-outm-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+      "type="text" 
+      id="id" 
+      name="id">
+    <input 
+      class="flex text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" 
+      type="submit" 
+      value="Delete user">
+</form>
+
+
+<br><br>
+
+<!-- Afficher tous les clients -->
+<form action="http://localhost:5000/user" method="GET">
+    <label for="id">Click here to show all users :</label> 
+    <input 
+      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" 
+      type="submit" 
+      value="Show all users">
+</form>
+
+<br><br>
+
+<div class="container">
+    <table class="border-collapse">
+        <tr>
+            <th class="border py-2 px-4 bg-sky-400">id</th>
+            <th class="border py-2 px-4 bg-sky-400">username</th>
+            <th class="border py-2 px-4 bg-sky-400">mail</th>
+            <th class="border py-2 px-4 bg-sky-400">password</th>
+            <th class="border py-2 px-4 bg-sky-400">created_at</th>
+            <th class="border py-2 px-4 bg-sky-400">updated_at</th>
+          </tr>
+        {% for element in data %}
+          <tr>
+            {% for value in element %}
+              <td class="border py-2 px-4">{{ value }}</td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+      </table>
+</div>
+
+
+
+
+
+<!-- <form action="http://localhost:5000/user/" method="POST">
+  <label for="id">Entrez un ID :</label><br>
+  <input type="text" id="id" name="id"><br>
+  <input type="submit" value="Afficher les données">
+</form> -->
+
+
+</body>
+</html>
